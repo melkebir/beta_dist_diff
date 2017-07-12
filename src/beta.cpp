@@ -49,7 +49,9 @@ double BetaDifference::prob(const int x_a,
   }
   else
   {
-    return 1 - g(y_a + 1, y_b + 1, x_a + 1, x_b + 1);
+    return std::max(0.,
+                    std::min(1.,
+                             1 - g(y_a + 1, y_b + 1, x_a + 1, x_b + 1)));
   }
 }
 
